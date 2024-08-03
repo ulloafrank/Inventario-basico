@@ -37,15 +37,6 @@ class Inventory
 		}
 		return $data;
 	}
-	private function getNumRows($sqlQuery)
-	{
-		$result = mysqli_query($this->dbConnect, $sqlQuery);
-		if (!$result) {
-			die('Error in query: ' . mysqli_error());
-		}
-		$numRows = mysqli_num_rows($result);
-		return $numRows;
-	}
 	public function login($email, $password)
 	{
 		$password = md5($password);
